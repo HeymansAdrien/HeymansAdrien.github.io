@@ -14,3 +14,147 @@ body {
   background-size: cover;
   -o-background-size: cover;
 }
+
+/* ---------- Research commit graph ---------- */
+#research { scroll-margin-top: 56px; }
+
+.gitgraph {
+  --lane-a: #2e7d32;
+  --lane-b: #6f42c1;
+  --gutter: 56px;
+  --node-y: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.gitgraph > li {
+  position: relative;
+  min-height: 60px;
+  padding: 10px 0 14px calc(var(--gutter) + 14px);
+  scroll-margin-top: 70px;
+}
+.gitgraph > li.year { min-height: 0; padding-top: 18px; padding-bottom: 4px; }
+.gitgraph > li.year h3 { font-size: 1.05rem; font-weight: 700; color: #6c757d; margin: 0; }
+
+/* rails: ::before = lane A (x=14), ::after = lane B (x=42) */
+.gitgraph > li::before,
+.gitgraph > li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  display: none;
+}
+.gitgraph > li::before { left: 11.5px; background: var(--lane-a); }
+.gitgraph > li::after  { left: 39.5px; background: var(--lane-b); }
+.gitgraph > li.a-full::before, .gitgraph > li.a-top::before, .gitgraph > li.a-bot::before,
+.gitgraph > li.b-full::after,  .gitgraph > li.b-top::after,  .gitgraph > li.b-bot::after { display: block; }
+.gitgraph > li.a-top::before, .gitgraph > li.b-top::after { bottom: auto; height: var(--node-y); }
+.gitgraph > li.a-bot::before, .gitgraph > li.b-bot::after { top: var(--node-y); }
+
+/* fork / merge curve glyph, starts at the node's height */
+.gitgraph .edge {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: var(--node-y);
+  width: 56px;
+  height: 32px;
+  overflow: visible;
+}
+.gitgraph .edge path { fill: none; stroke: var(--lane-b); stroke-width: 5; stroke-linecap: round; }
+
+/* nodes */
+.node {
+  position: absolute;
+  z-index: 2;
+  top: var(--node-y);
+  width: 14px;
+  height: 14px;
+  border: 3px solid currentColor;
+  border-radius: 50%;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+}
+.node.on-a { left: 14px; color: var(--lane-a); }
+.node.on-b { left: 42px; color: var(--lane-b); }
+.node.preprint { width: 16px; height: 16px; border: 2px dashed currentColor; background: #fff; }
+.node.project  { border-radius: 3px; }
+.node.ongoing  { width: 16px; height: 16px; border: 2px dashed currentColor; border-radius: 3px; background: #fff; }
+.node.milestone { border-radius: 0; transform: translate(-50%, -50%) rotate(45deg); }
+.node.merge {
+  width: 22px;
+  height: 22px;
+  border: 3px solid #fff;
+  background: linear-gradient(90deg, var(--lane-a) 50%, var(--lane-b) 50%);
+  box-shadow: 0 0 0 2px #343a40;
+}
+
+/* row content */
+.commit-body {
+  border-left: 3px solid transparent;
+  padding: 2px 0 2px .75rem;
+  max-width: 48rem;
+  border-radius: 2px;
+}
+.commit-body.lane-a { border-left-color: var(--lane-a); }
+.commit-body.lane-b { border-left-color: var(--lane-b); }
+.commit-body h4 { font-size: 1rem; font-weight: 600; margin: .25rem 0; }
+.commit-body h4 a { color: inherit; }
+.commit-body .meta { font-size: 80%; color: #6c757d; margin-bottom: .35rem; }
+.commit-body .desc { font-size: 90%; margin-bottom: .35rem; }
+.commit-body .btn { margin: 0 .25rem .25rem 0; }
+.commit-body .builds-on { font-size: 80%; margin-bottom: .35rem; }
+.commit-body .builds-on a { white-space: nowrap; }
+.commit-body .card { max-width: 420px; }
+.commit-body .card-img-top { max-height: 260px; object-fit: contain; background: #f8f9fa; }
+
+.ref {
+  display: inline-block;
+  font: 600 75%/1.4 SFMono-Regular, Menlo, Consolas, monospace;
+  padding: 0 .4em;
+  border: 1px solid currentColor;
+  border-radius: 1em;
+  vertical-align: middle;
+}
+.ref-a { color: var(--lane-a); }
+.ref-b { color: var(--lane-b); }
+
+@keyframes gg-flash {
+  from { background-color: rgba(255, 193, 7, .45); }
+  to   { background-color: transparent; }
+}
+.gitgraph > li:target > .commit-body { animation: gg-flash 2.5s ease-out; }
+@media (prefers-reduced-motion: reduce) {
+  .gitgraph > li:target > .commit-body { animation: none; background-color: rgba(255, 193, 7, .25); }
+}
+
+/* legend */
+.gg-legend {
+  --lane-a: #2e7d32;
+  --lane-b: #6f42c1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem 1.25rem;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  list-style: none;
+  font-size: 85%;
+  color: #495057;
+}
+.gg-legend li { display: flex; align-items: center; }
+.gg-legend .node {
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+  flex: none;
+  margin-right: .5rem;
+  color: #495057;
+}
+.gg-legend .node.milestone { transform: rotate(45deg); }
+.gg-key { margin: 2rem 0 0; padding-top: 1rem; border-top: 1px solid #dee2e6; }
+.gg-legend .lane-swatch { display: inline-block; width: 22px; height: 5px; margin-right: .5rem; }
+.gg-legend .lane-swatch.a { background: var(--lane-a); }
+.gg-legend .lane-swatch.b { background: var(--lane-b); }

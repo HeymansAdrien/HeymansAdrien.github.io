@@ -116,163 +116,392 @@
     <img class="img-fluid d-block mx-auto" src="img/flux2.png" alt="" style="height: 350px;">
   </section>
 
-  <!-- Content section -->
-  <p id="research"></p>
-  <section class="py-5">
+  <!-- Research section: commit graph, newest first -->
+  <section id="research" class="py-5">
     <div class="container">
-      <h1>Research Project</h1>
-	  <p>Overview of the few project I have been working on.  
-	  <!-- Page Features -->
-    <div class="row text-center">
+      <h1>Research</h1>
+      <p class="lead">Papers and projects as a commit graph, newest first. Two branches of work, plant hydraulics and cell mechanics, meet in <a href="#r-hydroneedle">HydroNeedle</a>.</p>
 
-	<div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="img/hydroneedle.png" alt="">
-          <div class="card-body">
-            <h4 class="card-title">HydroNeedle</h4>
-            <p class="card-text">Modeling hydraulic functions of pine needle anatomy under well-watered and water deficit conditions.
-            </p>
-			<p class="card-text" style="font-size:75%;">Adrien Heymans, Stan Schymanski, Pierre Vollenweider, Valentin Couvreur</p>
-          </div>
-          <div class="card-footer">
-            <a href="https://github.com/HydroNeedle" class="btn btn-primary" target="_new">Check our github organization.</a>
-          </div>
-        </div>
-      </div>
+      <ul class="gg-legend" aria-label="Branches">
+        <li><span class="lane-swatch a"></span>Plant hydraulics</li>
+        <li><span class="lane-swatch b"></span>Cell mechanics</li>
+      </ul>
 
-	<div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="img/dlhook.png" alt="">
-          <div class="card-body">
-            <h4 class="card-title">DLhook</h4>
-            <p class="card-text">High-throughput apical hook phenotyping of dark-grown Arabidopsis thaliana seedlings.
-            </p>
-			<p class="card-text" style="font-size:75%;">David Radianu, Adrien Heymans, Siamsa Doyle, Stéphanie Robert, Sara Raggi</p>
-          </div>
-          <div class="card-footer">
-            <a href="https://github.com/SRobertGroup/DLhook" class="btn btn-primary" target="_new">Version 0.2.1 available!</a>
-          </div>
-        </div>
-      </div>
+      <!-- Rails: every row between a lane's tip and its root gets x-full; the tip (newest) gets x-bot, the root (oldest) gets x-top. -->
+      <ol class="gitgraph" aria-label="Research timeline, newest first">
 
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="img/epi.png" alt="">
-          <div class="card-body">
-            <h4 class="card-title">EpiMech</h4>
-            <p class="card-text">Outer epidermal edges mediate cell-cell adhesion for tissue integrity in plants.
-            </p>
-			<p class="card-text" style="font-size:75%;">Özer Erguvan, Adrien Heymans, Asal Atakhani, Elsa Gascon, Richard S. Smith, Olivier Ali, Stéphane Verger</p>
+        <li class="year"><h3>2026</h3></li>
+
+        <li id="r-rootsas" class="a-bot">
+          <span class="node on-a ongoing" aria-hidden="true"></span>
+          <div class="commit-body lane-a">
+            <span class="sr-only">Plant hydraulics branch, latest work.</span>
+            <span class="ref ref-a">HEAD &rarr; plant-hydraulics</span>
+            <span class="badge badge-secondary">Ongoing</span>
+            <h4>RootSAS &mdash; Root System &amp; Anatomy Suite</h4>
+            <p class="desc">Integrated pipeline for 2D root images: from root system architecture to cell anatomy and hydraulic modelling (root scans &rarr; Stelex / DigRED; cross-sections &rarr; Stari &rarr; GRANAP &rarr; MECHA conductivities).</p>
+            <p class="meta">In development</p>
+            <p class="builds-on">Builds on: <a href="#r-granap">GRANAP</a> &middot; <a class="ext" href="https://github.com/MECHARoot/MECHA" target="_blank" rel="noopener">MECHA</a> &middot; <a class="ext" href="https://github.com/Abe404/root_painter" target="_blank" rel="noopener">RootPainter</a></p>
           </div>
-          <div class="card-footer">
-            <a href="https://www.biorxiv.org/content/10.1101/2025.04.03.646819v1" class="btn btn-primary" target="_new">Preprint!</a>
+        </li>
+
+        <li id="r-granap" class="a-full">
+          <span class="node on-a ongoing" aria-hidden="true"></span>
+          <div class="commit-body lane-a">
+            <span class="sr-only">Plant hydraulics branch.</span>
+            <span class="badge badge-secondary">Under development</span>
+            <h4>GRANAP</h4>
+            <p class="desc">New version of GRANAR, rewritten in Python: generator of anatomies for all plant organs.</p>
+            <p class="meta">OpenAlea incubator &middot; in development</p>
+            <p class="builds-on">Builds on: <a href="#r-granar">GRANAR</a> &middot; <a href="#r-hydroneedle">HydroNeedle</a></p>
+            <a href="https://github.com/openalea-incubator/GRANAP-dev" class="btn btn-primary btn-sm" target="_blank" rel="noopener">GitHub repository</a>
           </div>
-        </div>
-      </div>
+        </li>
+
+        <li id="r-dlhook" class="a-full b-bot">
+          <span class="node on-b ongoing" aria-hidden="true"></span>
+          <div class="commit-body lane-b">
+            <span class="sr-only">Cell mechanics branch, latest work.</span>
+            <span class="ref ref-b">cell-mechanics</span>
+            <span class="badge badge-secondary">In development</span>
+            <h4>DLhook</h4>
+            <p class="desc">High-throughput apical hook phenotyping of dark-grown <em>Arabidopsis thaliana</em> seedlings.</p>
+            <p class="meta">D. Radianu, A. Heymans, S. Doyle, S. Robert, S. Raggi &middot; active development</p>
+            <a href="https://github.com/SRobertGroup/DLhook" class="btn btn-primary btn-sm" target="_blank" rel="noopener">GitHub repository</a>
+            <button class="btn btn-outline-secondary btn-sm" type="button" data-toggle="collapse" data-target="#d-dlhook" aria-expanded="false" aria-controls="d-dlhook">Details</button>
+            <div class="collapse" id="d-dlhook">
+              <div class="card mt-1">
+                <img class="card-img-top" src="img/dlhook.png" alt="DLhook apical hook segmentation" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li id="r-robert" class="a-full b-full">
+          <span class="node on-b preprint" aria-hidden="true"></span>
+          <div class="commit-body lane-b">
+            <span class="sr-only">Cell mechanics branch.</span>
+            <span class="badge badge-secondary">Preprint</span>
+            <h4><a href="https://doi.org/10.21203/rs.3.rs-9901835/v1" target="_blank" rel="noopener">Mechanical coordination of counter-gradient growth maintains organ curvature in the apical hook</a></h4>
+            <p class="meta">S. Robert, S. Raggi, H. Ratnakaram, A. Heymans, L. Devi, &Ouml;. Erguvan, S. Doyle, F. Jobert, A. Atakhani, S. Liu, et al. &middot; <em>Research Square</em> &middot; 2026</p>
+            <p class="builds-on">Builds on: <a class="ext" href="https://mosaic.gitlabpages.inria.fr/bvpy/" target="_blank" rel="noopener">Bvpy</a></p>
+          </div>
+        </li>
+
+        <li id="r-stoll" class="a-full b-full">
+          <span class="node on-a paper" aria-hidden="true"></span>
+          <div class="commit-body lane-a">
+            <span class="sr-only">Plant hydraulics branch.</span>
+            <span class="badge badge-secondary">Paper</span>
+            <h4><a href="https://doi.org/10.1093/insilicoplants/diag005" target="_blank" rel="noopener">Impact of root development, soil texture, and length of the root hair zone on root water uptake</a></h4>
+            <p class="meta">F. Stoll, J. Vanderborght, P. Duddek, F. Meunier, A. Heymans, M.A. Ahmed, A. Carminati &middot; <em>in silico Plants</em> 8(1) &middot; 2026</p>
+          </div>
+        </li>
+
+        <li id="r-dagostino" class="a-full b-full">
+          <span class="node on-a paper" aria-hidden="true"></span>
+          <div class="commit-body lane-a">
+            <span class="sr-only">Plant hydraulics branch.</span>
+            <span class="badge badge-secondary">Paper</span>
+            <h4><a href="https://doi.org/10.1093/insilicoplants/diag022" target="_blank" rel="noopener">Secondary growth and exodermal barriers shape local root hydraulics: modelling insights in tomato</a></h4>
+            <p class="meta">M. D&rsquo;Agostino, R. Schoppach, A. Heymans, V. Couvreur, G. Lobet &middot; <em>in silico Plants</em> &middot; 2026</p>
+            <p class="builds-on">Builds on: <a href="#r-granar">GRANAR</a> &middot; <a class="ext" href="https://github.com/MECHARoot/MECHA" target="_blank" rel="noopener">MECHA</a> &middot; <a href="#r-marshal">MARSHAL</a></p>
+          </div>
+        </li>
+
+        <li id="r-yadav" class="a-full b-full">
+          <span class="node on-b paper" aria-hidden="true"></span>
+          <div class="commit-body lane-b">
+            <span class="sr-only">Cell mechanics branch.</span>
+            <span class="badge badge-secondary">Paper</span>
+            <h4><a href="https://doi.org/10.1093/jxb/erag320" target="_blank" rel="noopener">The primary beta-galactosidase BGAL10 modulates pavement cell shape acquisition in Arabidopsis</a></h4>
+            <p class="meta">S. Yadav, V. Kumar, A. Heymans, N. Sabooni, F. Jobert, M. Lin, P. Grones, L. Bacete, S. Robert &middot; <em>Journal of Experimental Botany</em> &middot; 2026</p>
+          </div>
+        </li>
+
+        <li class="year a-full b-full"><h3>2025</h3></li>
+
+        <li id="r-hydroneedle" class="a-full b-full">
+          <span class="node on-a merge" aria-hidden="true"></span>
+          <svg class="edge" viewBox="0 0 56 32" aria-hidden="true" focusable="false"><path d="M42 32 C42 14 14 18 14 0"/></svg>
+          <div class="commit-body lane-a">
+            <span class="sr-only">Plant hydraulics branch. Merge: combines plant hydraulics and cell mechanics work.</span>
+            <span class="badge badge-dark">Merge</span>
+            <span class="badge badge-secondary">Project</span>
+            <h4>HydroNeedle</h4>
+            <p class="desc">Modeling hydraulic functions of pine needle anatomy under well-watered and water deficit conditions, and how they interplay with needle biomechanics.</p>
+            <p class="meta">A. Heymans, S. Schymanski, P. Vollenweider, V. Couvreur &middot; CR-FNRS &middot; since October 2025</p>
+            <p class="builds-on">Builds on: <a href="#r-granar-mecha">Granar-Mecha</a> &middot; <a href="#r-epimech">EpiMech</a></p>
+            <a href="https://github.com/HydroNeedle" class="btn btn-primary btn-sm" target="_blank" rel="noopener">GitHub organization</a>
+            <button class="btn btn-outline-secondary btn-sm" type="button" data-toggle="collapse" data-target="#d-hydroneedle" aria-expanded="false" aria-controls="d-hydroneedle">Details</button>
+            <div class="collapse" id="d-hydroneedle">
+              <div class="card mt-1">
+                <img class="card-img-top" src="img/hydroneedle.png" alt="Pine needle cross-section used for hydraulic modelling" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li id="r-koehler" class="a-full b-full">
+          <span class="node on-a paper" aria-hidden="true"></span>
+          <div class="commit-body lane-a">
+            <span class="sr-only">Plant hydraulics branch.</span>
+            <span class="badge badge-secondary">Paper</span>
+            <h4><a href="https://doi.org/10.1093/aob/mcaf075" target="_blank" rel="noopener">Node of origin matters: comparative analysis of soil water limitation effects on nodal root anatomy in maize (<em>Zea mays</em>)</a></h4>
+            <p class="meta">T. Koehler, Y. Kim, S.-Y. Tung, A. Heymans, N. Tyborski, F. Steiner, A.J. Wild, J. Pausch, M.A. Ahmed, H.M. Schneider &middot; <em>Annals of Botany</em> 136(5&ndash;6) &middot; 2025</p>
+            <p class="builds-on">Builds on: <a href="#r-granar">GRANAR</a> &middot; <a class="ext" href="https://github.com/MECHARoot/MECHA" target="_blank" rel="noopener">MECHA</a></p>
+          </div>
+        </li>
+
+        <li id="r-kumar" class="a-full b-full">
+          <span class="node on-b paper" aria-hidden="true"></span>
+          <div class="commit-body lane-b">
+            <span class="sr-only">Cell mechanics branch.</span>
+            <span class="badge badge-secondary">Review</span>
+            <h4><a href="https://doi.org/10.1111/ppl.70294" target="_blank" rel="noopener">&ldquo;Shape of Cell&rdquo; &mdash; An auxin and cell wall duet</a></h4>
+            <p class="meta">V. Kumar, S. Yadav, A. Heymans, S. Robert &middot; <em>Physiologia Plantarum</em> 177(3) &middot; 2025</p>
+          </div>
+        </li>
+
+        <li id="r-rodriguez" class="a-full b-full">
+          <span class="node on-b preprint" aria-hidden="true"></span>
+          <div class="commit-body lane-b">
+            <span class="sr-only">Cell mechanics branch.</span>
+            <span class="badge badge-secondary">Preprint</span>
+            <h4><a href="https://doi.org/10.21203/rs.3.rs-5861118/v1" target="_blank" rel="noopener">Regulation of vacuole fusion, a pivotal mechanism mitigating salt-induced inhibition of root cell growth</a></h4>
+            <p class="meta">C. Rodriguez-Furlan, O. Betz, W. Tiernan, K. Shipman, G. Castro, R. Campos, A. Heymans, O. Hazelwood, A. Ashraf, S. Robert &middot; <em>Research Square</em> &middot; 2025</p>
+            <p class="builds-on">Builds on: <a class="ext" href="https://mosaic.gitlabpages.inria.fr/bvpy/" target="_blank" rel="noopener">Bvpy</a></p>
+          </div>
+        </li>
+
+        <li id="r-epimech" class="a-full b-full">
+          <span class="node on-b preprint" aria-hidden="true"></span>
+          <div class="commit-body lane-b">
+            <span class="sr-only">Cell mechanics branch.</span>
+            <span class="badge badge-secondary">Preprint</span>
+            <span class="badge badge-secondary">Project</span>
+            <h4>EpiMech &mdash; <a href="https://www.biorxiv.org/content/10.1101/2025.04.03.646819v1" target="_blank" rel="noopener">Outer epidermal edges mediate cell-cell adhesion for tissue integrity in plants</a></h4>
+            <p class="meta">&Ouml;. Erguvan, A. Heymans, A. Atakhani, E. Gascon, R.S. Smith, O. Ali, S. Verger &middot; <em>bioRxiv</em> &middot; 2025</p>
+            <p class="builds-on">Builds on: <a class="ext" href="https://mosaic.gitlabpages.inria.fr/bvpy/" target="_blank" rel="noopener">Bvpy</a></p>
+            <button class="btn btn-outline-secondary btn-sm" type="button" data-toggle="collapse" data-target="#d-epimech" aria-expanded="false" aria-controls="d-epimech">Details</button>
+            <div class="collapse" id="d-epimech">
+              <div class="card mt-1">
+                <img class="card-img-top" src="img/epi.png" alt="Epidermal cell adhesion model" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="year a-full b-full"><h3>2024</h3></li>
+
+        <li id="r-yu" class="a-full b-full">
+          <span class="node on-a paper" aria-hidden="true"></span>
+          <div class="commit-body lane-a">
+            <span class="sr-only">Plant hydraulics branch.</span>
+            <span class="badge badge-secondary">Paper</span>
+            <h4><a href="https://doi.org/10.1038/s41588-024-01761-3" target="_blank" rel="noopener">Seedling root system adaptation to water availability during maize domestication and global expansion</a></h4>
+            <p class="meta">P. Yu, C. Li, M. Li, et al. (incl. A. Heymans) &middot; <em>Nature Genetics</em> 56(6) &middot; 2024</p>
+            <p class="builds-on">Builds on: <a href="#r-granar">GRANAR</a> &middot; <a class="ext" href="https://github.com/MECHARoot/MECHA" target="_blank" rel="noopener">MECHA</a> &middot; <a href="#r-marshal">MARSHAL</a></p>
+          </div>
+        </li>
+
+        <li id="r-mclaughlin" class="a-full b-full">
+          <span class="node on-a paper" aria-hidden="true"></span>
+          <div class="commit-body lane-a">
+            <span class="sr-only">Plant hydraulics branch.</span>
+            <span class="badge badge-secondary">Paper</span>
+            <h4><a href="https://doi.org/10.1111/eva.13673" target="_blank" rel="noopener">Evidence that variation in root anatomy contributes to local adaptation in Mexican native maize</a></h4>
+            <p class="meta">C. McLaughlin, M. Li, M. Perryman, A. Heymans, H. Schneider, J. Lasky, R. Sawers &middot; <em>Evolutionary Applications</em> &middot; 2024</p>
+            <p class="builds-on">Builds on: <a href="#r-granar">GRANAR</a> &middot; <a class="ext" href="https://github.com/MECHARoot/MECHA" target="_blank" rel="noopener">MECHA</a></p>
+          </div>
+        </li>
+
+        <li id="r-baba" class="a-full b-top">
+          <span class="node on-b preprint" aria-hidden="true"></span>
+          <svg class="edge" viewBox="0 0 56 32" aria-hidden="true" focusable="false"><path d="M42 0 C42 18 14 14 14 32"/></svg>
+          <div class="commit-body lane-b">
+            <span class="sr-only">Cell mechanics branch starts here (Ume&aring; Plant Science Centre postdoc), branching off plant hydraulics.</span>
+            <span class="badge badge-dark">Branch</span>
+            <span class="badge badge-secondary">Preprint</span>
+            <h4><a href="https://doi.org/10.1101/2024.11.26.625362" target="_blank" rel="noopener">Rhamnogalacturonan-II dimerization deficiency impairs the coordination between growth and adhesion maintenance in plants</a></h4>
+            <p class="meta">A.I. Baba, L. Lisica, A. Atakhani, B. Aryal, L. Bogdziewiez, &Ouml;. Erguvan, A. Heymans, et al. &middot; <em>bioRxiv</em> &middot; 2024</p>
+            <p class="builds-on">Builds on: <a class="ext" href="https://github.com/Abe404/root_painter" target="_blank" rel="noopener">RootPainter</a></p>
+          </div>
+        </li>
+
+        <li class="year a-full"><h3>2023</h3></li>
+
+        <li id="r-schnepf" class="a-full">
+          <span class="node on-a paper" aria-hidden="true"></span>
+          <div class="commit-body lane-a">
+            <span class="sr-only">Plant hydraulics branch.</span>
+            <span class="badge badge-secondary">Paper</span>
+            <h4><a href="https://doi.org/10.1093/insilicoplants/diad005" target="_blank" rel="noopener">Collaborative benchmarking of functional-structural root architecture models: quantitative comparison of simulated root water uptake</a></h4>
+            <p class="meta">A. Schnepf, C.K. Black, V. Couvreur, B.M. Delory, C. Doussan, A. Heymans, et al. &middot; <em>in silico Plants</em> 5(1) &middot; 2023</p>
+            <p class="builds-on">Builds on: <a class="ext" href="https://www.quantitative-plant.org/model/R-SWMS" target="_blank" rel="noopener">R-SWMS</a></p>
+          </div>
+        </li>
+
+        <li id="r-hydramaize" class="a-full">
+          <span class="node on-a ongoing" aria-hidden="true"></span>
+          <div class="commit-body lane-a">
+            <span class="sr-only">Plant hydraulics branch.</span>
+            <span class="badge badge-secondary">Ongoing</span>
+            <h4>HydraMaize</h4>
+            <p class="desc">The influence of heterogeneous soil water potential on root growth: modeling root plastic response.</p>
+            <p class="meta">A. Heymans, T. Wei, M. Laurent, X. Draye, M. Javaux &middot; experiments and simulations ongoing</p>
+            <p class="builds-on">Builds on: <a class="ext" href="https://www.quantitative-plant.org/model/R-SWMS" target="_blank" rel="noopener">R-SWMS</a></p>
+            <button class="btn btn-outline-secondary btn-sm" type="button" data-toggle="collapse" data-target="#d-hydramaize" aria-expanded="false" aria-controls="d-hydramaize">Details</button>
+            <div class="collapse" id="d-hydramaize">
+              <div class="card mt-1">
+                <img class="card-img-top" src="img/R0_croped.gif" alt="Animated simulation of maize root growth in heterogeneous soil" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="year a-full"><h3>2022</h3></li>
+
+        <li id="r-phd" class="a-full">
+          <span class="node on-a milestone" aria-hidden="true"></span>
+          <div class="commit-body lane-a">
+            <span class="sr-only">Plant hydraulics branch. Milestone.</span>
+            <span class="badge badge-secondary">PhD thesis</span>
+            <h4><a href="https://scholar.google.com/scholar?q=%22In+silico+analysis+of+the+influence+of+root+hydraulic+anatomy+on+maize%22" target="_blank" rel="noopener">In silico analysis of the influence of root hydraulic anatomy on maize (<em>Zea mays</em>) water uptake</a></h4>
+            <p class="desc">Includes <strong>Hydraulic VIPER</strong>, a virtual phenotyping pipeline for root hydraulic traits (with V. Couvreur, F. Meunier, M. Javaux, X. Draye, G. Lobet).</p>
+            <p class="meta">A. Heymans &middot; UCLouvain &middot; 2022</p>
+            <p class="builds-on">Builds on: <a href="#r-granar">GRANAR</a> &middot; <a class="ext" href="https://github.com/MECHARoot/MECHA" target="_blank" rel="noopener">MECHA</a> &middot; <a href="#r-smartroot">CRootBox</a> &middot; <a class="ext" href="https://www.pc-progress.com/en/Default.aspx?hydrus" target="_blank" rel="noopener">Hydrus</a> &middot; <a href="#r-marshal">MARSHAL</a></p>
+            <a href="https://github.com/HeymansAdrien/HeymansAdrien.github.io/blob/master/img/massif.png" class="btn btn-primary btn-sm" target="_blank" rel="noopener">VIPER poster</a>
+            <a href="https://figshare.com/articles/presentation/A_multiscale_virtual_phenotyping_pipeline_for_root_water_uptake/13055933/1" class="btn btn-primary btn-sm" target="_blank" rel="noopener">VIPER slides</a>
+            <button class="btn btn-outline-secondary btn-sm" type="button" data-toggle="collapse" data-target="#d-viper" aria-expanded="false" aria-controls="d-viper">Details</button>
+            <div class="collapse" id="d-viper">
+              <div class="card mt-1">
+                <img class="card-img-top" src="img/hydraulic-viper.png" alt="Hydraulic VIPER pipeline overview" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="year a-full"><h3>2021</h3></li>
+
+        <li id="r-granar-mecha" class="a-full">
+          <span class="node on-a project" aria-hidden="true"></span>
+          <div class="commit-body lane-a">
+            <span class="sr-only">Plant hydraulics branch.</span>
+            <span class="badge badge-secondary">Tool</span>
+            <h4>Granar-Mecha</h4>
+            <p class="desc">Radial water fluxes in a generated root cross-section.</p>
+            <p class="meta">A. Heymans, V. Couvreur &middot; 2021</p>
+            <p class="builds-on">Builds on: <a href="#r-granar">GRANAR</a></p>
+            <a href="https://github.com/HeymansAdrien/GranarMecha/blob/main/README.md" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Try it</a>
+            <button class="btn btn-outline-secondary btn-sm" type="button" data-toggle="collapse" data-target="#d-granar-mecha" aria-expanded="false" aria-controls="d-granar-mecha">Details</button>
+            <div class="collapse" id="d-granar-mecha">
+              <div class="card mt-1">
+                <img class="card-img-top" src="img/MECHANAR.JPG" alt="Radial water flux map in a generated root cross-section" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </li>
 
 
-	  <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="img/R0_croped.gif" alt="">
-          <div class="card-body">
-            <h4 class="card-title">HydraMaize</h4>
-            <p class="card-text">The influence of heterogeneous soil water potential on root growth, modeling root plastic response</p>
-			<p class="card-text" style="font-size:75%;">A. Heymans, T. Wei, M. Laurent, X. Draye and M. Javaux.</p>
+        <li id="r-couvreur" class="a-full">
+          <span class="node on-a preprint" aria-hidden="true"></span>
+          <div class="commit-body lane-a">
+            <span class="sr-only">Plant hydraulics branch.</span>
+            <span class="badge badge-secondary">Preprint</span>
+            <h4><a href="https://doi.org/10.1101/2021.04.19.439789" target="_blank" rel="noopener">Evidence for a multicellular symplasmic water pumping mechanism across vascular plant roots</a></h4>
+            <p class="meta">V. Couvreur, A. Heymans, G. Lobet, X. Draye &middot; <em>bioRxiv</em> &middot; 2021</p>
+            <p class="builds-on">Builds on: <a class="ext" href="https://github.com/MECHARoot/MECHA" target="_blank" rel="noopener">MECHA</a></p>
           </div>
-          <div class="card-footer">
-            <a href="-" class="btn btn-primary" target="_new">Experiment and simulation ongoing!</a>
-          </div>
-        </div>
-      </div>
-	
-	  <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="img/rootsystem.png" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Hydraulic Maps</h4>
-            <p class="card-text">Combining cross-section images and modeling tools to create high-resolution root system hydraulic atlases in Zea mays</p>
-			<p class="card-text" style="font-size:75%;">A. Heymans, V. Couvreur, and G. Lobet.</p>
-          </div>
-          <div class="card-footer">
-            <a href="https://onlinelibrary.wiley.com/doi/10.1002/pld3.334" class="btn btn-primary" target="_new">Article available!</a>
-          </div>
-        </div>
-      </div>
-	  
-	  <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="img/MECHANAR.JPG" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Granar-Mecha</h4>
-            <p class="card-text">Radial water fluxes in a generated root cross section</p>
-			<p class="card-text" style="font-size:75%;">A. Heymans, and V. Couvreur</p>
-          </div>
-          <div class="card-footer">
-            <a href="https://github.com/HeymansAdrien/GranarMecha/blob/main/README.md" class="btn btn-primary" target="_new">Try it online</a>
-          </div>
-        </div>
-      </div>
+        </li>
 
-	      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="img/Hydraulic Viper.png" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Hydraulic VIPER</h4>
-            <p class="card-text">Virtual phenotyping pipeline for root hydraulic traits.</p>
-			<p class="card-text" style="font-size:75%;">A. Heymans, V. Couvreur, F. Meunier, M. Javaux, X. Draye, and G. Lobet.</p>
+        <li id="r-maps" class="a-full">
+          <span class="node on-a paper" aria-hidden="true"></span>
+          <div class="commit-body lane-a">
+            <span class="sr-only">Plant hydraulics branch.</span>
+            <span class="badge badge-secondary">Paper</span>
+            <span class="badge badge-secondary">Project</span>
+            <h4>Hydraulic Maps &mdash; <a href="https://doi.org/10.1002/pld3.334" target="_blank" rel="noopener">Combining cross-section images and modeling tools to create high-resolution root system hydraulic atlases in <em>Zea mays</em></a></h4>
+            <p class="meta">A. Heymans, V. Couvreur, G. Lobet &middot; <em>Plant Direct</em> 5(7) &middot; 2021</p>
+            <p class="builds-on">Builds on: <a href="#r-granar">GRANAR</a> &middot; <a class="ext" href="https://github.com/MECHARoot/MECHA" target="_blank" rel="noopener">MECHA</a></p>
+            <button class="btn btn-outline-secondary btn-sm" type="button" data-toggle="collapse" data-target="#d-maps" aria-expanded="false" aria-controls="d-maps">Details</button>
+            <div class="collapse" id="d-maps">
+              <div class="card mt-1">
+                <img class="card-img-top" src="img/rootsystem.png" alt="Hydraulic atlas of a maize root system" loading="lazy">
+              </div>
+            </div>
           </div>
-          <div class="card-footer">
-			<a href="https://github.com/HeymansAdrien/HeymansAdrien.github.io/blob/master/img/massif.png" class="btn btn-primary" target="_new">Poster available</a>
-			<p></p>
-			<a href="https://figshare.com/articles/presentation/A_multiscale_virtual_phenotyping_pipeline_for_root_water_uptake/13055933/1" class="btn btn-primary" target="_new">Slide available</a>
-          </div>
-        </div>
-      </div>
-	
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <a href="https://granar.github.io/" target="_new"><img class="card-img-top" src="img/granar_cov.jpg" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">GRANAR</h4>
-            <p class="card-text">Generator of root anatomy in R.</p>
-			<p class="card-text" style="font-size:75%;"> A. Heymans, V. Couvreur, T. LaRue, A. Paez-Garcia, G. Lobet.</p>
-          </div>
-          <div class="card-footer">
-			<a href="https://plantmodelling.shinyapps.io/granar/" class="btn btn-primary" target="_new">Try it online</a>
-			<p></p>
-			<a href="https://doi.org/10.1104/pp.19.00617" class="btn btn-primary" target="_new">Article available</a>
-          </div>
-        </div>
-      </div>
+        </li>
 
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <a href="https://marshal-root.github.io/" target="_new"><img class="card-img-top" src="https://marshal-root.github.io/img/marshal3.PNG" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">MARSHAL</h4>
-            <p class="card-text">MARSHAL, a novel tool for virtual phenotyping of maize root system hydraulic architectures</p>
-			<p class="card-text" style="font-size:75%;">F. Meunier, A. Heymans, X. Draye, V. Couvreur, M. Javaux, and G. Lobet</p>
-          </div>
-          <div class="card-footer">
-			<a href="https://plantmodelling.shinyapps.io/marshal/" class="btn btn-primary" target="_new">Try it online</a>
-			<p></p>
-			<a href="https://doi.org/10.1093/insilicoplants/diz012" class="btn btn-primary" target="_new">Article available</a>
-          </div>
-        </div>
-      </div>
+        <li class="year a-full"><h3>2020</h3></li>
 
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="img/Maize_15d.gif" alt="">
-          <div class="card-body">
-            <h4 class="card-title">SmartRoot to CRootBox</h4>
-            <p class="card-text">From root system scans to a 3D models of your plant in few steps.</p>
+        <li id="r-granar" class="a-full">
+          <span class="node on-a paper" aria-hidden="true"></span>
+          <div class="commit-body lane-a">
+            <span class="sr-only">Plant hydraulics branch.</span>
+            <span class="badge badge-secondary">Paper</span>
+            <span class="badge badge-secondary">Tool</span>
+            <h4>GRANAR &mdash; <a href="https://doi.org/10.1104/pp.19.00617" target="_blank" rel="noopener">A computational tool to better understand the functional importance of monocotyledon root anatomy</a></h4>
+            <p class="meta">A. Heymans, V. Couvreur, T. LaRue, A. Paez-Garcia, G. Lobet &middot; <em>Plant Physiology</em> 182(2) &middot; 2020</p>
+            <a href="https://plantmodelling.shinyapps.io/granar/" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Try it online</a>
+            <a href="https://granar.github.io/" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Website</a>
+            <button class="btn btn-outline-secondary btn-sm" type="button" data-toggle="collapse" data-target="#d-granar" aria-expanded="false" aria-controls="d-granar">Details</button>
+            <div class="collapse" id="d-granar">
+              <div class="card mt-1">
+                <img class="card-img-top" src="img/granar_cov.jpg" alt="Generated maize root cross-section" loading="lazy">
+              </div>
+            </div>
           </div>
-          <div class="card-footer">
-            <a href="https://uclouvain.be/en/directories/adrien.heymans" class="btn btn-primary" target="_new">Contact me to help you out</a>
+        </li>
+
+        <li id="r-smartroot" class="a-full">
+          <span class="node on-a project" aria-hidden="true"></span>
+          <div class="commit-body lane-a">
+            <span class="sr-only">Plant hydraulics branch.</span>
+            <span class="badge badge-secondary">Service</span>
+            <h4>SmartRoot to CRootBox</h4>
+            <p class="desc">From root system scans to a 3D model of your plant in a few steps.</p>
+            <a href="https://github.com/Plant-Root-Soil-Interactions-Modelling/CRootBox" class="btn btn-primary btn-sm" target="_blank" rel="noopener">CRootBox</a>
+            <button class="btn btn-outline-secondary btn-sm" type="button" data-toggle="collapse" data-target="#d-smartroot" aria-expanded="false" aria-controls="d-smartroot">Details</button>
+            <div class="collapse" id="d-smartroot">
+              <div class="card mt-1">
+                <img class="card-img-top" src="img/Maize_15d.gif" alt="Animated 3D maize root system at 15 days" loading="lazy">
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </li>
+
+        <li class="year a-full"><h3>2019</h3></li>
+
+        <li id="r-marshal" class="a-top">
+          <span class="node on-a paper" aria-hidden="true"></span>
+          <div class="commit-body lane-a">
+            <span class="sr-only">Plant hydraulics branch starts here.</span>
+            <span class="badge badge-secondary">Paper</span>
+            <span class="badge badge-secondary">Tool</span>
+            <h4>MARSHAL &mdash; <a href="https://doi.org/10.1093/insilicoplants/diz012" target="_blank" rel="noopener">A novel tool for virtual phenotyping of maize root system hydraulic architectures</a></h4>
+            <p class="meta">F. Meunier, A. Heymans, X. Draye, V. Couvreur, M. Javaux, G. Lobet &middot; <em>in silico Plants</em> &middot; 2019</p>
+            <a href="https://plantmodelling.shinyapps.io/marshal/" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Try it online</a>
+            <a href="https://marshal-root.github.io/" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Website</a>
+            <button class="btn btn-outline-secondary btn-sm" type="button" data-toggle="collapse" data-target="#d-marshal" aria-expanded="false" aria-controls="d-marshal">Details</button>
+            <div class="collapse" id="d-marshal">
+              <div class="card mt-1">
+                <img class="card-img-top" src="https://marshal-root.github.io/img/marshal3.PNG" alt="MARSHAL maize root system hydraulic architecture" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </li>
+      </ol>
+
+      <ul class="gg-legend gg-key" aria-label="Legend">
+        <li><span class="node paper"></span>Paper</li>
+        <li><span class="node preprint"></span>Preprint</li>
+        <li><span class="node project"></span>Project / tool</li>
+        <li><span class="node ongoing"></span>Ongoing</li>
+        <li><span class="node milestone"></span>Milestone</li>
+        <li><span class="node merge"></span>Merge</li>
+      </ul>
+    </div>
   </section>
   
     <!-- Image Section - set the background image for the header in the line below -->

@@ -1,0 +1,187 @@
+@article{meunier2019marshal,
+  title={MARSHAL, a novel tool for virtual phenotyping of maize root system hydraulic architectures},
+  author={Meunier, F{\'e}licien and Heymans, Adrien and Draye, Xavier and Couvreur, Valentin and Javaux, Mathieu and Lobet, Guillaume},
+  journal={in silico Plants},
+  number={Tech Advance},
+  year={2019},
+  publisher={Oxford University Press}
+}
+
+@article{heymans2020granar,
+  title={GRANAR, a computational tool to better understand the functional importance of monocotyledon root anatomy},
+  author={Heymans, Adrien and Couvreur, Valentin and LaRue, Therese and Paez-Garcia, Ana and Lobet, Guillaume},
+  journal={Plant physiology},
+  volume={182},
+  number={2},
+  pages={707--720},
+  year={2020},
+  publisher={Am Soc Plant Biol}
+}
+
+@article{couvreur2021evidence,
+  title={Evidence for a multicellular symplasmic water pumping mechanism across vascular plant roots},
+  author={Couvreur, Valentin and Heymans, Adrien and Lobet, Guillaume and Draye, Xavier},
+  journal={BioRxiv},
+  pages={2021--04},
+  year={2021},
+  publisher={Cold Spring Harbor Laboratory}
+}
+
+@article{heymans2021combining,
+  title={Combining cross-section images and modeling tools to create high-resolution root system hydraulic atlases in Zea mays},
+  author={Heymans, Adrien and Couvreur, Valentin and Lobet, Guillaume},
+  journal={Plant direct},
+  volume={5},
+  number={7},
+  pages={e00290},
+  year={2021}
+}
+
+@phdthesis{heymans2022silico,
+  title={In silico analysis of the influence of root hydraulic anatomy on maize (Zea mays) water uptake},
+  author={Heymans, Adrien},
+  year={2022},
+  school={UCLouvain}
+}
+
+@article{barczi2021loic,
+  title={Lo{\"\i}c Pag{\`e}s, founding scientist in root ecology and modelling},
+  author={Barczi, Jean-Fran{\c{c}}ois and Beroueg, Amira and Buck-Sorlin, Gerhard and Couvreur, Valentin and Danjon, Fr{\'e}d{\'e}ric and Delory, Benjamin M and Doussan, Claude and De Swaef, Tom and Draye, Xavier and Drouet, Jean-Louis and others},
+  journal={in silico Plants},
+  volume={3},
+  number={2},
+  year={2021}
+}
+
+@article{phan2023nitrogen,
+  title={Nitrogen use efficiency of rice cultivars (Oryza sativa l.) under salt stress and low nitrogen conditions},
+  author={Phan, Nhung Thi Hong and Heymans, Adrien and Bonnave, Mathieu and Lutts, Stanley and Pham, Cuong Van and Bertin, Pierre},
+  journal={Journal of Plant Growth Regulation},
+  volume={42},
+  number={3},
+  pages={1789--1803},
+  year={2023},
+  publisher={Springer US New York}
+}
+
+@article{schnepf2023collaborative,
+  title={Collaborative benchmarking of functional-structural root architecture models: Quantitative comparison of simulated root water uptake},
+  author={Schnepf, Andrea and Black, Christopher K and Couvreur, Valentin and Delory, Benjamin M and Doussan, Claude and Heymans, Adrien and Javaux, Mathieu and Khare, Deepanshu and Koch, Axelle and Koch, Timo and others},
+  journal={in silico Plants},
+  volume={5},
+  number={1},
+  pages={diad005},
+  year={2023},
+  publisher={Oxford University Press UK}
+}
+
+@article{mclaughlin2024evidence,
+  title={Evidence that variation in root anatomy contributes to local adaptation in Mexican native maize},
+  author={McLaughlin, Chloee and Li, Meng and Perryman, Melanie and Heymans, Adrien and Schneider, Hannah and Lasky, Jesse and Sawers, Ruairidh},
+  journal={Evolutionary Applications},
+  year={2024},
+  publisher={John Wiley \& Sons Ltd}
+}
+
+@article{phan2024nitrogen,
+  title={Nitrogen use efficiency and yield components of rice as influenced by reducing nitrogen application under salinity conditions in a pot experiment},
+  author={Phan, Nhung Thi Hong and Heymans, Adrien and Bonnave, Mathieu and Tang, Hanh Thi and Pham, Cuong Van and Bertin, Pierre},
+  journal={Journal of Plant Nutrition},
+  volume={47},
+  number={9},
+  pages={1438--1455},
+  year={2024},
+  publisher={Taylor \& Francis}
+}
+
+@article{yu2024seedling,
+  title={Seedling root system adaptation to water availability during maize domestication and global expansion},
+  author={Yu, Peng and Li, Chunhui and Li, Meng and He, Xiaoming and Wang, Danning and Li, Hongjie and Marcon, Caroline and Li, Yu and Perez-Limon, Sergio and Chen, Xinping and others},
+  journal={Nature genetics},
+  volume={56},
+  number={6},
+  pages={1245--1256},
+  year={2024},
+  publisher={Nature Publishing Group US New York}
+}
+
+@article{baba2024rhamnogalacturonan,
+  title={Rhamnogalacturonan-II dimerization deficiency impairs the coordination between growth and adhesion maintenance in plants},
+  author={Baba, Abu Imran and Lisica, Lucija and Atakhani, Asal and Aryal, Bibek and Bogdziewiez, L{\'e}a and Erguvan, {\"O}zer and Heymans, Adrien and Jewaria, Pawan Kumar and Smith, Richard S and Bhalerao, Rishikesh P and others},
+  journal={bioRxiv},
+  pages={2024--11},
+  year={2024},
+  publisher={Cold Spring Harbor Laboratory}
+}
+
+@article{erguvan2025outer,
+  title={Outer epidermal edges mediate cell-cell adhesion for tissue integrity in plants},
+  author={Erguvan, {\"O}zer and Heymans, Adrien and Atakhani, Asal and Gascon, Elsa and Smith, Richard S and Ali, Olivier and Verger, St{\'e}phane},
+  journal={bioRxiv},
+  pages={2025--04},
+  year={2025},
+  publisher={Cold Spring Harbor Laboratory}
+}
+
+@article{rodriguez2025regulation,
+  title={Regulation of vacuole fusion, a pivotal mechanism mitigating salt-induced inhibition of root cell growth},
+  author={Rodriguez-Furlan, Cecilia and Betz, Oliver and Tiernan, Wylie and Shipman, Kurtis and Castro, Graciela and Campos, Roya and Heymans, Adrien and Hazelwood, Olivia and Ashraf, Arif and Robert, St{\'e}phanie},
+  year={2025}
+}
+
+@article{koehler2025node,
+  title={Node of origin matters: comparative analysis of soil water limitation effects on nodal root anatomy in maize (Zea mays)},
+  author={Koehler, Tina and Kim, Yunhee and Tung, Shu-Yin and Heymans, Adrien and Tyborski, Nicolas and Steiner, Franziska and Wild, Andreas J and Pausch, Johanna and Ahmed, Mutez A and Schneider, Hannah M},
+  journal={Annals of Botany},
+  volume={136},
+  number={5-6},
+  pages={1031--1046},
+  year={2025},
+  publisher={Oxford University Press}
+}
+
+@article{kumar2025shape,
+  title={“Shape of Cell”—An Auxin and Cell Wall Duet},
+  author={Kumar, Vinod and Yadav, Sandeep and Heymans, Adrien and Robert, St{\'e}phanie},
+  journal={Physiologia Plantarum},
+  volume={177},
+  number={3},
+  pages={e70294},
+  year={2025},
+  publisher={Wiley Online Library}
+}
+
+@article{stoll2026impact,
+  title={Impact of root development, soil texture, and length of the root hair zone on root water uptake},
+  author={Stoll, Florian and Vanderborght, Jan and Duddek, Patrick and Meunier, F{\'e}licien and Heymans, Adrien and Ahmed, Mutez A and Carminati, Andrea},
+  journal={in silico Plants},
+  volume={8},
+  number={1},
+  pages={diag005},
+  year={2026},
+  publisher={Oxford University Press US}
+}
+
+@article{d2026secondary,
+  title={Secondary Growth and Exodermal Barriers Shape Local Root Hydraulics: Modeling Insights in Tomato},
+  author={D’Agostino, Marco and Schoppach, R{\'e}my and Heymans, Adrien and Couvreur, Valentin and Lobet, Guillaume},
+  journal={in silico Plants},
+  pages={diag022},
+  year={2026},
+  publisher={Oxford University Press}
+}
+
+@article{robert2026mechanical,
+  title={Mechanical coordination of counter-gradient growth maintains organ curvature in the apical hook},
+  author={Robert, St{\'e}phanie and Raggi, Sara and Ratnakaram, Hemamshu and Heymans, Adrien and Devi, Loitongbam and Erguvan, {\"O}zer and Doyle, Siamsa and Jobert, Fran{\c{c}}ois and Atakhani, Asal and Liu, Sijia and others},
+  year={2026}
+}
+
+@article{yadav2026primary,
+  title={The primary beta-galactosidase BGAL10 modulates pavement cell shape acquisition in Arabidopsis},
+  author={Yadav, Sandeep and Kumar, Vinod and Heymans, Adrien and Sabooni, Nasrin and Jobert, Fran{\c{c}}ois and Lin, Mengzhuo and Grones, Peter and Bacete, Laura and Robert, St{\'e}phanie},
+  journal={Journal of Experimental Botany},
+  pages={erag320},
+  year={2026},
+  publisher={Oxford University Press}
+}
